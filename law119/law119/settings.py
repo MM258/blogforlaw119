@@ -77,20 +77,6 @@ ROOT_URLCONF = 'law119.urls'
 WSGI_APPLICATION = 'law119.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'MySQL',
-# 		'USER': 'root',
-# 		'PASSWORD': 'password',
-# 		'HOST': '127.0.0.1',
-# 		'POST': '3306',
-#     }
-# }
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
