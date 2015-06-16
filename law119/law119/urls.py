@@ -4,7 +4,7 @@ from django.contrib import admin
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'law119.views.home', name='home'),
-    url(r'^blog119/', include('blog119.urls')),
+    # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
 )
