@@ -13,22 +13,22 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_DIR = os.getcwd()
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'blogforlaw119',
-#         'USER': 'law119',
-#         'PASSWORD': 'law119><?',
-#         'HOST': '127.0.0.1',
-#         'PORT': '',
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'blogforlaw119',
+        'USER': 'law119',
+        'PASSWORD': 'law119><?',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 # TEMPLATE_DIR = (
 # 			os.path.join(BASE_DIR,'template'),
 # 			)
