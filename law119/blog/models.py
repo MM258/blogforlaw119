@@ -27,20 +27,20 @@ class Picture(models.Model):
 	
 
 class Case(models.Model):
-	case_image = models.ForeignKey(Picture)
+	case_image = models.ManyToManyField(Picture)
 	gender_choices = (('J','jinji'),('X','xingshi'))
 	case_content = models.CharField(max_length = 250)
 	anli = models.CharField(max_length = 1,choices = gender_choices)
 
 class About_us(models.Model):		
 	context = models.TextField(max_length = 400)
-	myimage = models.ForeignKey(Picture)
+	myimage = models.ManyToManyField(Picture)
 
 class Contact_us(models.Model):
 	name = models.CharField(max_length = 30)
 	company = models.CharField(max_length = 150)
 	address = models.CharField(max_length = 50)
 	telephone = models.CharField(max_length = 15)
-	my_map = models.ForeignKey(Picture)
+	my_map = models.ManyToManyField(Picture)
 	website = models.URLField()
 	email = models.EmailField()
