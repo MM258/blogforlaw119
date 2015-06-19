@@ -4,10 +4,13 @@
 {% include "menu.html" with tag="case" %}
 {% endblock %}
 {% block content %}
+{% block taitou %}
+<div><a href="/case">经典案例</a> > <a href="/case/jinji/">经济案件</a></div>
+{% endblock %}
 {% for post in case %}
-<h1>{{post.anli}}:</h1><br/>
-<p>{{post.content}}<br/>
+{{post.anli}}<br/>
+<p>{{post.case_content}}<br/>
 	<img src="{{post.case_imag}}"></p>
-thanks visit my page!
+thanks visit my page!<br/>
 {% endfor %}
 {% endblock %}

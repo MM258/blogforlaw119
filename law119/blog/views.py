@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response,get_object_or_404
 from django.template import RequestContext
-from blog.models import Blog,Contact_us,About_us,Case
+from blog.models import *
 # Create your views here.
 def home(request):
 	# contact = Contact_us.objects.all()
@@ -16,8 +16,12 @@ def blog(request):
 def case(request):
 	# import ipdb;
 	# ipdb.set_trace()
-	case = Case.objects.all()
+	case = Case.case.all()
 	return render_to_response('case.html',{"case":case},context_instance = RequestContext(request))
+
+def jinji(request):
+	jinji = Case.Jinji.all()
+	return render_to_response('anjian/jinji.html',{"case":jinji},context_instance = RequestContext(request))
 
 def about_us(request):
 	about = About_us.objects.all()

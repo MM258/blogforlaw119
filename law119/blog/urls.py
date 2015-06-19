@@ -7,4 +7,5 @@ urlpatterns = patterns('',
 	url(r'^about_us/$',views.about_us),
 	url(r'^contact_us/$',views.contact_us),
 	url(r'^case/$',views.case),
+	url(r'^case/jinji/$',views.jinji),
 	)

@@ -6,7 +6,7 @@ from django.db import models
 class Blog(models.Model):
 	title = models.CharField(max_length = 60)
 	name = models.CharField(max_length = 30)
-	blog_content = models.TextField(max_length = 300)
+	blog_content = models.TextField(max_length = 5000)
 	publition_date = models.DateField()
 	
 	class Meta:
@@ -25,15 +25,25 @@ class Picture(models.Model):
 	def __unicode__(self):
 		return self.title
 	
+class JinjiManager(models.Manager):
+	def get_queryset(self):
+		return super(JinjiManager,self).get_queryset().filter(anli='J')
+
+class XingshiManager(models.Manager):
+	def get_queryset(self):
+		return super(XingshiManager,self).get_queryset().filter(anli='X')
 
 class Case(models.Model):
 	case_image = models.ManyToManyField(Picture)
-	gender_choices = (('J','jinji'),('X','xingshi'))
-	case_content = models.CharField(max_length = 250)
-	anli = models.CharField(max_length = 1,choices = gender_choices)
+	case_content = models.CharField(max_length = 3000)
+	anli = models.CharField(max_length = 1,choices = (('J','jinji'),('X','xingshi')))
+	case = models.Manager()
+	Jinji = JinjiManager()
+	Xigshi = XingshiManager()
+
 
 class About_us(models.Model):		
-	context = models.TextField(max_length = 400)
+	context = models.TextField(max_length = 4000)
 	myimage = models.ManyToManyField(Picture)
 
 class Contact_us(models.Model):
