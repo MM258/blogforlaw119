@@ -8,4 +8,4 @@ urlpatterns = patterns('',
 	url(r'^contact_us/$',views.contact_us),
 	url(r'^case/$',views.case),
 	url(r'^case/jinji/$',views.jinji),
-	)
+	)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
